@@ -8,7 +8,7 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>2.7.1</version>
-        <relativePath/> <!-- lookup parent from repository -->
+        <relativePath/>
     </parent>
     
     <groupId>graphQL-Demo</groupId>
@@ -27,7 +27,7 @@
         <dependency>
             <groupId>com.graphql-java</groupId>
             <artifactId>graphql-java</artifactId>
-            <version>17.3</version> <!-- Use the latest version -->
+            <version>17.3</version>
         </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
@@ -42,19 +42,8 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot</artifactId>
-            <version>3.1.2</version>
+            <version>2.7.1</version>
         </dependency>
-        <!--<dependency>
-            <groupId>com.graphql-java-kickstart</groupId>
-            <artifactId>graphql-spring-boot-starter</artifactId>
-            <version>12.0.0</version> &lt;!&ndash; Use the latest version &ndash;&gt;
-        </dependency>-->
-
-        <!--<dependency>
-            <groupId>com.graphql-java-kickstart</groupId>
-            <artifactId>graphql-spring-boot-starter</artifactId>
-            <version>13.0.2</version>
-        </dependency>-->
 
     </dependencies>
 
