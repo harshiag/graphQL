@@ -1,10 +1,27 @@
-import graphql.kickstart.tools.GraphQLQueryResolver;
-//import graphql.kickstart.annotations.GraphQLQueryResolver;
-import org.springframework.stereotype.Component;
+import graphql.schema.DataFetcher;
+import graphql.schema.DataFetchingEnvironment;
+import graphql.schema.GraphQLObjectType;
+import graphql.schema.GraphQLSchema;
+import graphql.schema.GraphQLFieldDefinition;
+import graphql.schema.GraphQLObjectType;
 
-@Component
-public class GraphQLResolver implements GraphQLQueryResolver {
-    public String hello() {
-        return "Hello, GraphQL!";
+public class GraphQLResolver {
+    public static void main(String[] args) {
+        GraphQLObjectType queryType = GraphQLObjectType.newObject()
+            .name("Query")
+            .field(GraphQLFieldDefinition.newFieldDefinition()
+                .name("hello")
+                .type(graphql.Scalars.GraphQLString)
+                .dataFetcher(new DataFetcher<String>() {
+                    @Override
+                    public String get(DataFetchingEnvironment environment) {
+                        return "Hello, GraphQL!";
+                    }
+                }))
+            .build();
+
+        GraphQLSchema schema = GraphQLSchema.newSchema()
+            .query(queryType)
+            .build();
     }
 }
